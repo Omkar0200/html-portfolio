@@ -1,0 +1,75 @@
+li[value="1"]{
+    color: red;
+}
+.about{
+    font-style: italic;
+}
+p{
+    font-size:15px;
+}
+body{
+    background-color: rgb(206, 206, 237);
+}
+a{
+    color: blue;
+}
+.Size_box{
+    height: 150px;
+    width: 200px;
+    text-align: center;
+    color: black;
+    display: inline-table;
+    margin: 10px;
+    border-radius: 25px;
+    border: 3px double black;
+    
+}
+.value1{
+    background-color: red;
+    
+    
+}
+.value2{
+    background-color: blue;
+}
+.value3{
+    background-color: rgb(255, 255, 0);
+}
+.value4{
+    background-color: orange;
+}
+.value5{
+    background-color: green;
+}
+.pixel{
+    font-size: 10px;
+}
+.point{
+    font-size: 10pt;
+}
+.Em{
+    font-size: 1em;
+}
+.Rem{
+    font-size: 1rem;
+}
+.dl_fontweight{
+    margin-top: 3px;
+}
+
+.gradient-background{ 
+    background: linear-gradient(300deg, yellow, red, blue);
+    background-size: 180% 180%;
+    animation: gradiet-animation 18s ease infinite;
+}
+@keyframes gradient-animation{
+    0%{
+        background-position: 0% 50%;
+    }
+    50%{
+        background-position: 100% 50%;
+    }
+    100%{
+        background-position: 0% 50%;
+    }
+}

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Styles.css">
+    <style>
+        .Padding_ex{
+            padding: 10px;
+            width: 150px;
+            height: 150px;
+            background-color: rgb(237, 146, 146);
+            border: 5px solid black;
+            text-align:inherit
+        }
+        .div_{
+            height: 100px;
+            width: 100px;
+            border: 2px dotted black ;
+        }
+        .div1{
+            background-color: aqua;
+        }
+        .div2{
+            background-color: aquamarine;
+            margin-left: 105px;
+            border: 10px solid red;
+        }
+        .div3{
+            background-color: beige; 
+            border: solid green;
+            border-width: 9px 3px;
+           
+        }
+        #outer-box{
+            border: 10px solid purple;
+        }
+        
+        .box{
+            background-color: blue;
+            padding: 10px;
+        }
+        .inner-box{
+            background-color: red;
+        }
+        p{
+            color: rgb(244, 244, 90);
+            margin: 0;
+            padding:0;
+        }
+        .white-text{
+            color: white;
+        }
+    </style>
+    <title>Padding & Margin</title>
+</head>
+<body>
+    <a href="index.html">Home Page</a><br><br>
+    <li>
+        Padding is set pad between item & container, & values of all side goes clockwise.<br>
+        <div class="Padding_ex">
+            <h5>
+                This is example of padding.
+                Where it affects on space between border & text.
+                we can manager the inner space of box using padding.
+            </h5>
+        </div><br>
+    </li>
+    <li>
+        Margin is in between "spacing between outline of item & anyother componant" & values of all side goes clockwise<br><br>
+        <div class="div1 div_">1</div>
+        <div class="div2 div_">2</div>
+        <div class="div3 div_">3</div>
+    </li>
+
+    <h1>Example</h1>
+    <div id="outer-box" class="box">
+        <div class="box">
+            <p>Yellow Text</p>
+            <div class="box inner-box">
+                <p class="white-text">White Text</p>
+            </div>
+        </div>
+        <div class="box">
+            <p>Yellow Text</p>
+            <div class="box inner-box">
+                <p class="white-text">White Text</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

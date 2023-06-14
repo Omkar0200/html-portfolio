@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>CSS Positioning</title>
+        <link rel="stylesheet" href="Styles.css">
+        <style>
+            .box{
+                height: 105px;
+                width: 105px;
+            }
+            .static_p{
+                background-color: lawngreen;
+                color: red;
+                position: static;
+                top: 20px;
+                left: 50px;
+            }
+            .relative_p{
+                background-color: blue;
+                color: white;
+                position: relative;
+                top: 20px;
+                left: 50px;
+            }
+            .absolute_p{
+                background-color: fuchsia;
+                color: black;
+                position: relative;
+                top: 1px;
+                left: 650px;
+                
+            }
+            .absolute_p2{
+                background-color: black;
+                color: white;
+                position: absolute;
+                top: 5px;
+                left:105px;
+            }
+            .fix_p{
+                background-color: khaki;
+                position: fixed;
+                top: 200px;
+                left: 700px;
+            }
+            .ex{
+                background-color: white;
+                
+            }
+            .red-circle{
+                background-color: red;
+                height : 200px; 
+                width: 200px;
+                border-radius: 50%;
+                position: absolute;
+                left: 250px;
+                top: 150px;
+            }
+            .blue-box{
+                background-color: blue;
+                width: 500px;
+                height: 300px;
+                position: relative;
+                left: 50px;
+                top: 20px;
+
+            }
+        </style>
+            
+    </head>
+    <body>
+        <a href="index.html">Home Page</a><br><br>   
+        <div>
+            Static Positioning-<br>
+            Its HTML default flow / position Or one on the top of other.<br>
+            Where as you add the elements it will arange by default poisition / as per your writting order.<br>
+            it doesn't allow to change his position from default.
+            <div class="box static_p">
+                Position change is not applicable for static position.
+            </div>
+        </div>
+        <div>
+            <br>Relative Positioning-<br>
+            it's allows us to apply default position change. So, we can shift item from its static position.<br>
+            Here we can see the change of 150px left & 20px top.
+            <div class="box relative_p">
+                Relative We can apply the change to move from default positioning.
+            </div>
+        </div><br>
+        <div>
+            <br>Absolute Positioning-<br>
+            Allow to position relative to positioned ancestor or top left corner of webpage.
+            <div class="box absolute_p">
+                A1 ancestor is in relative position. and we have to set ancestor to this postion.
+                <div class="box absolute_p2">
+                    A2 Absolute positioning , with his ancestor near becz he is child of A1.
+                </div>
+            </div>
+            Also there is z-index which override the elementson webpage or override the webpages one on one top.
+        </div>
+        <div>
+            <br>Fixed Positioning-<br>
+            Position relativeto top left corner of browser window.
+            <div class="box fix_p">
+                it it always fixed on webpage & dosen't affect when you scroll the webpage.
+            </div>
+        </div>
+        <div class="ex">
+            <h1>Example</h1>
+            <div class="blue-box">
+                <div class="red-circle"></div>
+            </div>
+        </div>
+    </body>
+</html>

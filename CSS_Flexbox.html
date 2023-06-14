@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        p ,h1{
+            margin: 0px;
+        }
+        .container{
+            width: 100%;
+            display: flex;
+            gap: 1rem;
+            background-color: gold;
+            list-style:none;
+            
+        }
+        .containeer{
+            display: inline-flex;
+            flex-direction: column;
+            /*flex-direction: column;*/
+        }
+        .containeer > *{
+            flex-basis: 100px;
+            /*flex-basis: 100px*/
+        }
+        .con-3{
+            border: 5px solid gold;
+            display: flex;
+            flex-wrap: wrap;
+            height: 30vh;
+            justify-content: space-evenly;
+            align-items: stretch;
+        }
+        .con-3 > *{
+            flex-basis: 150px;
+            flex-direction: row;
+
+        }
+        .yellow{
+            align-self: flex-start;
+            order: 1;
+        }
+        .con-4{
+            display: flex;
+            gap: 10px;            
+        }
+        .bor{
+            border: 2px solid green;
+            
+            /*flex-basis: 200px;*/
+            flex-basis: 200px;
+            max-width: 100px;
+            
+            
+        }
+        .con-5{
+            display: flex; 
+            gap: 10px;
+        }
+        .bb{
+            flex:1; 
+            background-color: brown;
+        }
+    </style>
+    <title>CSS_Flexbox</title>
+    <link rel="stylesheet" href="Styles.css">
+</head>
+<body>
+    <a href="index.html">Home Page</a><br><br> 
+    <h1>Flex box</h1>
+
+    <p>
+        Here we use display-flex property.<br>
+        CSS flexbox is used to create complex 1D layout on the webpage i.e. column/row, it does the intraction with user.<br>
+        <br>
+        <li>We can define flex using<b>"display:flex;</b></li>
+        <li>This is the default direction of flex box <b>"flex-direction: row;"</b>left to right and we can add space between two div/p using <b>"gap:10px;"</b> or two columns /row.</li>
+        <li>We can set height of the layout using <b>"flex-basis: 100px;"</b> to all child elements. using parent > *</li>
+        <li>we can declare div + p element in inline as they are block leve elements flexbox allows us to show the content as inline <b>"display: inline-flex;"</b>.</li>
+        <li>We can use <b>order</b> property to arrange the child element in order as we want to see them, order default goes to left to right. Greater the oder arrangnment is later/ last.</li>
+        <li>we can use <b>"flex-wrap: wrap</b> to wrap the content if there is not much space available for that content, and it applies on the container/parent.</li>
+        <li>we can use this for horizontal position<b>"justify-contet: flex-start/end/center & space-between/space-evenly/space-around;"</b> on parent to arrenge content left/right/center.</li>
+        <li>we can arrange the content vertically using <b>"align-items: flex-start/center/flex-end/strech/baseline;"</b> but for this we have to give the height to parent<b>"height:70vh;"</b>for this property we have to set <b>"flex-wrap:nowrap"</b></li>
+        <li><b>"align-self: flex-start;</b> property is only for child applicable</li>
+        <li><b>"align-content"</b> is only work if <b>"wrap"</b></li>
+        <li>max-width is show how long the content strech & min-width shows how small the content shrink.</li>
+        <li>In shrink, by default flex occupy the whole width of row.<br>
+            Content width < width < flex-basis < min-width/max-width. <br> 
+            If we set flex-basis:200px; & max-width:100px(max wide range is 100px); then the width length is 100px(width < flex-basis) & width of flex-basis content is max 200px will ignore (not occupy the whole width of page.)<br>
+            max-width is full length of sentence. if max-width value is smaller than basis then max-width is countable but if max-width value is greater than basis then basis vaule is countable.
+            min-width is full length of longest word. if min-width is greater than basis then min-width is countable but it will not goint to shrink less than min-width value.
+        </li>
+        <br>
+        <p style="background-color: white;">
+            .container{<br>
+            &nbsp    width: 100%;<br>
+            &nbsp    display: flex;<br>
+            &nbsp    gap: 1rem;<br>
+            &nbsp    background-color: gold;<br>
+            &nbsp    list-style:none;<br>
+            }---we can see the list as a menu in row using flex,ex.1
+            <br><br>
+
+            .containeer{<br>
+            &nbsp    display: flex;<br>
+            &nbsp    flex-direction: column;<br>
+            }---Used to show div as a flex ex.2
+            <br><br>
+
+            .containeer > *{<br>
+            &nbsp    flex-basis: 100px;<br> 
+            }---This is use to set height/width 100px to child elements if we set direction to column/row of containeer class.ex.2
+            <br><br>
+
+            <b>for wrap</b><br>
+            border: 5px solid gold;<br>
+            display: flex;<br>
+            flex-wrap: wrap;<br><br>
+
+            .con-3{<br>
+            &nbsp   border: 5px solid gold;<br>
+            &nbsp   flex-wrap: wrap;<br>
+            &nbsp   display: flex;<br>
+            &nbsp   height: 30vh;<br>
+            &nbsp   align-items: stretch;<br>
+            &nbsp   justify-content: space-evenly;<br>
+            }<br><br>
+
+            .con-3 > *{<br>
+            &nbsp        flex-basis: 100px;<br>
+            }<br><br>
+
+            .yellow{<br>
+                &nbsp        align-self: flex-start;<br>
+                &nbsp        order:1;<br>
+            }<br><br>
+            
+            ex.4 <br>
+            .con-4{<br>
+                display: flex;<br>
+                gap: 10px;<br>    
+            }<br>
+            .bor{<br>
+                border: 2px solid green;<br>
+                width: 100px;<br>
+                /*flex-basis: 200px;<br>
+                flex-basis: 80px;<br>
+                max-width: 100px;*/<br>
+                flex-grow: 1;<br>
+                flex-shrink: 1;<br>
+            }<br>
+            flex: 1(grow) 1(shrink) 0(basis);- OR flex:1 1(grow) 1(shrink) 0(basis);
+        </p>
+    </p><br>
+
+
+    <h1>Example's</h1><br>
+    1. Display flexbox<br>
+    <div class="container">
+        
+        <p>Page Layout Methods</p>
+        <li>Home</li>
+        <li>Service</li>
+        <li>About</li>
+        <li>Contact</li>
+    </div><br>
+
+    2.setting height, flex-direction-row/col according to web page<br>
+    <div style="background-color:white;"class="containeer">
+        
+        <div style="background-color:red;">Red</div>
+        <div style="background-color:orange;">orange</div>
+        <div style="background-color:yellow;">yellow</div>
+        <div style="background-color:green;">Green</div>
+        <div style="background-color:blue;">blue</div>
+    </div><br>
+
+    3. responsive flexbox: order, nowrap/rap, align-items, justify-content, align-self
+    <div class="con-3">
+        <div class="red" style="background-color:red;">Red</div>
+        <div class="orange" style="background-color:orange;">orange</div>
+        <div class="yellow" style="background-color:yellow;">yellow</div>
+        <div class="green" style="background-color:green;">Green</div>
+        <div class="blue" style="background-color:blue;">blue</div>
+    </div>
+    4. responsive flexbox: flex-sizing: shirnking & growing
+    <div class="con-4">
+        <p class="bor">Home</p>
+        <p class="bor">About</p>
+        <p class="bor">Contact us</p>
+        <p class="bor">using Programming</p>
+    </div>
+    5. responsive flexbox
+    <div class="con-5">
+        <p class="bb">.</p>
+        <p style="flex:2; background-color:blue"></p>
+        <p style="flex:3; background-color:yellow"></p>
+    </div>
+</body>
+</html>

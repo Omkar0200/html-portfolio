@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Media_quries</title>
+    <link rel="stylesheet" href="Styles.css">
+    <style>
+        .ex_media_Q{
+            background-color: white;
+            
+            padding: 1px 0px 0px 10px;
+        }
+
+        div{
+            width:1200px;
+            height: 380px;
+            background-color: blueviolet;
+            position: relative;
+            left: 25px;
+            top: 10px;
+        }
+
+        .Ex-Back{
+            background-color: white;
+            height: 400px;
+            width: 1250px;
+            left: 0px;
+        }
+
+        .demo{
+            color:white;
+            padding: 8px;  
+        }
+
+        .headr{
+            text-align: right;
+            margin: 10px;
+        }
+
+        .main_m{
+            position: relative;
+            height: 88%;
+        }
+
+        .C1{
+            position: absolute;
+            top: 2px;
+            left: 27px;
+
+        }
+
+        .C2{
+            position: absolute;
+            left: 276px;
+            top: 85px;
+        }
+
+        .C3{
+            position: absolute;
+            right:200px;
+            top: 50px;
+        }
+
+        .M{
+            height: 280px;
+            position: absolute;
+            bottom: 0px;
+            left: 350px;
+        }
+
+        footer{
+            text-align: center;
+        }
+
+        @media (max-width:900px){
+            div{
+                height: 360px;
+                width: 720px;
+                position: relative;
+                left: 12px;
+                background-color: rgb(249, 146, 225);
+            }
+            .Ex-Back{
+                height: 380px;
+                width: 750px;
+            }
+            .M{
+            height: 280px;
+            position: absolute;
+            bottom: 0px;
+            left: 150px;
+            }
+            .C3{
+            position: absolute;
+            right:55px;
+            top: 28px;
+            }
+            .C1{
+            position: absolute;
+            top: 80px;
+            left: 10px;
+            }
+            .C2{
+                display: none;
+            }
+        }
+
+        @media (max-width:600px){
+            div{
+                height: 360px;
+                width: 450px;
+                position: relative;
+                left: 12px;
+                background-color: rgb(127, 206, 220);
+            }
+            .Ex-Back{
+                height: 380px;
+                width: 470px;
+            }
+            .M{
+            height: 194px;
+            position: absolute;
+            bottom: 0px;
+            left: 13%;
+            }
+            .C3{
+            position: absolute;
+            top: 40px;
+            left: 258px;
+            height: 43px;
+            }
+            .C2{
+            display: none;
+            }
+            .C1{
+            position: absolute;
+            top: 80px;
+            left: 10px;
+            height: 45px;
+            }
+             
+        }
+        
+    </style>
+</head>
+
+<body>
+    <a href="index.html">Home Page</a><br><br> 
+    <h1>Media Quries</h1>
+    <p class="ex_media_Q">
+        Meadia Quries used to set the max width for the web page, webpage adjust as per the max width limit.<br>
+        <span style="color:blueviolet">@media (max-width: 600px) {<br>
+            "Css for screens below or equal to 600px wide"<br>
+        }</span><br><br>
+        Also, we can set min-width for the screen size like "@media(min-width: 300px)" that means the CSS will be apply to 300px+ size screen.<br>
+        ex. @media (min-width:400px) and (max-width:600px){
+    </p>
+    <h1>Example</h1>
+    <h3>To see the effect change the size of browser window</h3>
+    <div class="Ex-Back">
+        <div>
+            <header class="headr">
+                <a class="demo">Home  </a> 
+                <a class="demo">Services  </a> 
+                <a class="demo">Contact  </a>
+            </header>
+            <main class="main_m">
+                <img class="C1" src="cloud.png">
+                <img class="C2" src="cloud.png">
+                <img class="C3" src="cloud.png">
+                <p style="text-align: center; color: white;padding-top: 10px;">
+                    Hello There!<br>
+                    Welcome to Omkar world.
+                </p>
+                <img class="M" src="mountain.png">
+            </main>
+            <footer style="background-color: grey;">
+                <p style="color: white;">Copyright Reserved @2023</p>
+            </footer>
+        </div>
+    </div>
+</body>
+</html>

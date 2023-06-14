@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Display & float</title>
+    <link rel="stylesheet" href="Styles.css">
+    <style>
+        .ex{
+            background-color:white;
+            padding: 5px;
+        }
+        #blackl{
+            display: block;
+            
+            background-color: aqua;
+        }
+        #inlin{
+            display: inline;
+            
+            background-color:rgb(22, 243, 114);
+        }
+        #bI{
+            display: inline-block;
+           
+            background-color:rgb(211, 211, 38);
+        }
+        #no{
+            display: none;
+            
+            background-color:rgb(236, 7, 7);
+        }
+        .flo-L{
+            float: left;
+        }
+        .flo-R{
+            float: right;
+        }
+        h1{
+            margin-bottom: 7px;
+            margin-top: 0px;
+        }
+    </style>
+</head>
+<body>
+    <a href="index.html">Home Page</a><br><br> 
+    Three four of Display property:-
+    <ul>
+        <li>
+            Block<br>
+            it allows us to set height & width acording to your need. it take hole width of webpage like div/p.
+        </li>
+        <li>
+            Inline<br>
+            it does not allow to set height & width acording to your need. it act as span element i.e. two elements go on same line.
+        </li>
+        <li>
+            Inline-block<br>
+            it allows us to set height & width acording to your need & it allow elements go on same line.
+        </li>
+        <li>
+            none<br>
+            it disapper the element on webpage.
+        </li>
+    </ul>
+    <div class="ex">
+        <u><h1>Example</h1></u>
+        <div id="blackl">Block Display property</div>
+        <div id="inlin">Inline Display property</div>
+        <div id="bI">Blck-Inline Display property</div>
+        <div id="no">None Display property</div>here is none display element.
+    </div><br><br>
+    Float Property-<br>
+        <li>using flot property we can arrange the text to left or right to the img on web page.</li>
+    <div class="ex">
+        <u><h1>Example</h1></u>
+        <img src="cloud.png" class="flo-L">
+        <p >If you give the value flot : left then all the words or paragraph context will move left to the the img.</p><hr>
+        <img src="cloud.png" class="flo-R">
+        <p >If you give the value flot : right then all the words or paragraph context will move right to the the img.If you give the value flot : right then all the words or paragraph context will move right to the the img.If you give the value flot : right then all the words or paragraph context will move right to the the img.If you give the value flot : right then all the words or paragraph context will move right to the the img.If you give the value flot : right then all the words or paragraph context will move right to the the img.If you give the value flot : right then all the words or paragraph context will move right to the the img.</p>
+        
+    </div>
+    
+</body>
+</html>

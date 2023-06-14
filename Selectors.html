@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selectors</title>
+    <link rel="stylesheet" href="Styles.css">
+    <style>
+        .box > p{
+            color: firebrick;
+            /* Here we use ">" to tell browser target the p element whic is direct chiled element of class box*/
+        }
+        .box li{
+            color: blue;
+            /* We use select decendent li from ancestor of box */
+        }
+        h2, h3{
+            color: blueviolet;
+        }
+        li.done{
+            color: rgb(124, 216, 124);
+        }
+        .task{
+            background-color: white;
+            
+        }
+        ul p.extra{
+            font-size: 0.5rem;
+        }
+        
+    </style>
+</head>
+<body>
+    <a href="index.html">Home Page</a><br><br>
+    <ol>
+        <li>
+            Position-<br>
+            Css selection goes up to down,<br> so whatever we define the last prperty will apply to specific element.(lower down simply replace the upper one)
+        </li><br>
+        <li>
+            Specificity-
+            <ul>
+                <li>CSS Selections goes from Tag/Element like, p or h1 or li</li>
+                <li>Then it goes from class.
+                    <ul>
+                        <li>using class slector we can group manay class by"class1 , class2"</li>
+                        <li>we can declare selector using attribute 'li["draggable"]' all values applies to decendent of the class </li>
+                    </ul>
+                </li>
+                <li>after that value like draggable</li>
+                <li>last it checks the id "#" element</li>
+            </ul>
+        </li><br>
+        <li>
+            Type-<br>
+            It checks the external > internal > inline css.
+        </li><br>
+        <li>
+            Impartance-<br>
+            if we specifies "color: green !Important" then browser goves priority to that element.
+        </li>
+        
+    </ol>
+    Example of this topic is combined with padding & we can see there.<a href="PaddingMargin.html">Ex.</a>
+    <br><br>
+
+    Rules
+    <ul>
+        <li>Group Rule-<br>
+            <ul>
+                <li>Using this rule we can declare two class as a selector in css "slector, selector{color: blue;}"</li>
+                we can see the this in below example as h2&h3(to do list & monday) are selected by group rule.<br>
+                note = h2, h3 is formula for this CSS
+            </ul>  
+        </li>
+        <li>Child-<br>
+            <ul>
+                <li> for selecting child we can use ">" but it applies only on direct child.</li>
+                we can see that on "Do these things today" this is child of div called box. 
+                There are two child of box div p &  ul, & li tags under Ul is grand cgild of Div or box.<br>
+                note = .box > p is the formula for this CSS
+            </ul>
+        </li>
+        <li>Descendant-<br>
+            <ul>
+                <li>There is two selectore(Ancestor Descendant) & we can see this on "Wash closths"</li>
+                in ul there are 3 Descendants of Box/div Ancestor, so we select ".Box li{color: blue;}" we can use child selectore for replacement of decendent selectore"list > li".<br>
+                note = .Box li(Descendant) OR list > li(child)
+            </ul>
+        </li>
+        <li>Chaining-<br>
+            <ul>
+                <li>"selectoreselector" or "h1#id.class1.class2" no space between any selectore</li>
+                We have to first write the tag & then selecore like ID, Class, Attribute. we can see this on wash "Maths & Read"<br>
+                note = li.done OR h1#id.class1.class2
+            </ul>
+        </li>
+        <li>Combining combiners-<br>
+            <ul>
+                <li>
+                    "slector selectorselector" in this rule Ancestor+chanining selector. we can see this on "other items".<br>
+                    div/task is grand parent of all tags in this example & having 6 child elements.
+                    note = ul p.extra{font-size: 0.5rem;}
+                    
+                </li>
+            </ul>
+        </li>
+    </ul>
+
+    <div class="task">
+        <h1>Example</h1>
+        <h2>To DO List</h2>
+        <h3>Monday</h3>
+        <div class="box">
+            <p class="done">Do these things today!</p>
+            <ul class="list">
+                <li>Wash closths</li>
+                <li class="done">Read</li>
+                <li class="done">Maths Que.</li>
+            </ul>
+        </div>
+
+        <ul>
+            <p class="extra">Other Items</p>
+            <li class="done">schedule meeting tomorrow</li>
+            <li class="done">go for walk</li>
+        </ul>
+        <p>The best preparations for tomorrow is doing your best today</p>
+    </div>
+</body>
+</html>

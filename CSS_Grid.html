@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>CSS grid</title>
+    <link rel="stylesheet" href="Styles.css">
+    <style>
+        .chess{
+            display: grid;
+            width: 100px;
+            grid-template-rows: 1fr 1fr;
+            grid-template-columns:  1fr 1fr 1fr 1fr 1fr ; 
+            
+        }
+        .white{
+            height: 100px;
+            width: 100px;
+            background-color: #f0d9b5;
+        }
+        .black{
+            background-color: #b58863;
+            height: 100px;
+            width: 100px;
+        }
+        .fixed-g{
+            display: grid;
+            grid-template-rows: 50px 200px; 
+            grid-template-columns: 100px 800px;
+            
+        }
+        .some-r-g{
+            display: grid;
+            /*grid-template-rows: 100px auto;
+            grid-template-columns:  200px auto ;*/
+            grid-template: 100px auto / 200px auto;
+            
+        }
+        .fr-res-g{
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            grid-template-rows: 1fr 2fr;
+        }
+        .minmax-r-g{
+            display: grid;
+            grid-template-rows: 50px 100px;
+            grid-template-columns: 200px minmax(400px, 800px);
+        }
+        .ex-g{
+            display: grid;
+            grid-template-rows: 50px 50px;
+            grid-template-columns: 350px 200px ;
+            grid-auto-rows: 70px;
+        }
+        .demo{
+            border: 1px solid black;
+        }
+        .ex-2{
+            height: 100vh;
+            display: grid;
+            gap: 3rem;
+            grid-template-columns: 1fr 1fr 1.5fr;
+            grid-template-rows: 1fr 1fr;
+            
+        }
+        .item{
+            
+            background-color: blueviolet;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .cowboy{
+            background-color: #00B9FF;
+            grid-column: span 2;
+        }
+        .astro{
+            background-color: #03989E80;
+            grid-column-start: 1;
+            grid-column-end: 4;
+            grid-row-start: 2;
+            grid-row-end: 3;
+            
+        }
+        .book{
+            background-color: orange;
+            grid-area: 1 / 3 / -1 / 4;
+        }
+        .demo1 {
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <a href="index.html">Home Page</a><br><br> 
+    <h1>CSS Grid</h1>
+    <p>Here we use "display-grid" property. is used to create two dimentional 2D layout.<br>
+    Column and Row.<BR>
+        Container contains that contains all items this is usually a div its called "grid container".<br>
+        The items that are place inside the grid are "grid items".<br>
+        we cretaes the rows & columns in grid these are called as "Tracks" row tracks & column tracks. We resize these tracks using "grid-template-columns/rows".<br>
+        smallest unit in grid is "grid cell" but can be diff in size but set in row and column.<br>
+        grid lines are vertical & horizontal lines. we can controll them using "gap" property for space.
+    </p>
+    <ul>
+        <li>we can use <b>"grid-template:  50px 100px / 100px 200px"</b> 1st is rows & 2nd is columns instead of <b>"grid-template-columns: 350px 200px ;</b> this, but it is not responsive because we gave fix px size.</li>
+        <li>we can use <b>"grid-template-rows: 100px auto; grid-template-columns:  200px auto ;"</b> it will give us some responsiveness for 2nd column 100% width becus it take hole width & 2nd row for the content quantity. Also we can use <b>"grid-template: 100px auto / 200px auto"</b></li>
+        <li>we can use <b>"grid-template-rows: repeat(2, 200px); "grid-template-columns: repeat(3, 100px)</b> it creates 2 rows & 3 columns. used for reduce the repeat frame/px function</li>
+        <li>for arraning grid items in cells we can use <b>"grid-column-start: 1; grid-column-end: 3; grid-row-start: 2; grid-row-end: 3;</b> for this, we can use the replacement <b>"grid-area: 2  / 1 / 3 / 3"</b> the sequence is (grid-row-start) / (grid-column-start) / (grid-row-end) / (grid-column-end)</li>
+    </ul>
+        <div class="chess">
+
+            <div class="black"></div>
+            <div class="white"></div>
+            <div class="black"></div>
+            <div class="white"></div>
+            <div class="black"></div>
+            <div class="white"></div>
+            <div class="black"></div>
+            <div class="white"></div>
+            <div class="black"></div>
+            <div class="white"></div>
+            <div class="black"></div>
+            <div class="white"></div>
+            <div class="black"></div>
+            <div class="white"></div>
+            <div class="black"></div>
+            <div class="white"></div>
+            <div class="black"></div>
+            <div class="white"></div>
+            <div class="black"></div>
+            <div class="white"></div>
+            <div class="black"></div>
+            <div class="white"></div>
+            <div class="black"></div>
+            <div class="white"></div>
+            <div class="black"></div>
+        </div> 
+        <hr>
+        <b>not responsive grid fixed size</b>
+        <div class="fixed-g">
+            
+            <div class="demo">100px wide &<br> 50px height</div>
+            <div class="demo">800px wide &<br> 50px height</div>
+            <div class="demo">100px wide &<br> 200px height</div>
+            <div class="demo">800px (column) wide &<br> 200px (row) height </div>
+        </div> 
+        <hr>
+        <b>semi responsive grid auto size</b>
+        <div class="some-r-g">
+            <div class="demo">not responsive side</div>
+            <div class="demo">responsive side auto</div>
+            <div class="demo">not responsive for width but for content in this grid</div>
+            <div class="demo">responsive side auto</div>
+        </div>
+        <hr>
+        <b>responsive grid fractional size</b>
+        <div class="fr-res-g">
+            <div class="demo">1 fr row & column</div>
+            <div class="demo">1 fr row & 2fr column</div>
+            <div class="demo">2fr row & 1fr column,<br> it will automatically goes 2X than 1st one. as the content add in this column it will height strech.</div>
+            <div class="demo">2fr row & 2fr column</div>
+        </div> 
+        <hr>
+        <b>responsive grid MinMax size</b>
+        <div class="minmax-r-g">
+            <div class="demo">height is 50px, width is 200px</div>
+            <div class="demo">height is 50 px, if we shrink the width it will go upto 400px then content overlap<br> & expand upto 800px</div>
+            <div class="demo">height is 100px, width is 200px</div>
+            <div class="demo">height is 100px& widht min 400px to max 800px </div>
+        </div>
+        <hr>
+        <h3>Example for more divs than defined</h3>
+        <div class="ex-g">
+            <div class="demo">1</div>
+            <div class="demo">2</div>
+            <div class="demo">3</div>
+            <div class="demo">4</div>
+            <div class="demo">5, its an extra div which set to 70px height & width is sync with other divs.</div>
+        </div>
+        <h3 style="margin :0px;" >sizing & overlap Example using grid-area</h3>
+        below grid code are diff than mentioned.
+        <div class="ex-2">
+            <div class="item demo1 cowboy">
+                Fixed grid code.<br><br>
+                .fixed-g{<br>
+                    display: grid;<br>
+                    grid-template-rows: 50px 200px; <br>
+                    grid-template-columns: 100px 800px;<br>
+                    
+                }<br><br>
+                .ex-g{<br>
+                    display: grid;<br>
+                    grid-template-rows: 50px 50px;<br>
+                    grid-template-columns: 350px 200px ;<br>
+                    grid-auto-rows: 70px;<br><br>
+            </div>
+            <div class="item demo1 astro">
+                For arrangnment of cells using grid.<br><br>
+                background-color: #03989E;<br>
+                grid-column-start: 1;<br>
+                grid-column-end: 4;<br>
+                grid-row-start: 2;<br>
+                grid-row-end: 3;<br><br>
+
+                OR<br><br>
+
+                grid-area: 1 / 3 / -1 / 4;
+            </div>
+            <div class="item demo1  book">
+                Responsive grid code ex<br><br><br>
+                .some-r-g{<br>
+                    display: grid;<br>
+                    /*grid-template-rows: 100px auto;<br>
+                    grid-template-columns:  200px auto ;*/<br>
+                    grid-template: 100px auto / 200px auto;<br>
+                    
+                }<br><br>
+                .fr-res-g{<br>
+                    display: grid;<br>
+                    grid-template-columns: 1fr 2fr;<br>
+                    grid-template-rows: 1fr 2fr;<br>
+                }<br><br>
+                .minmax-r-g{<br>
+                    display: grid;<br>
+                    grid-template-rows: 50px 100px;<br>
+                    grid-template-columns: 200px minmax(400px, 800px);<br>
+                }<br><br>
+                
+            </div>
+        </div>
+</body>
+</html>
