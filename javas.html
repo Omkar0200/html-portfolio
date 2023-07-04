@@ -53,14 +53,14 @@
                     <h3>Variable</h3>
                     <div>
                         <div>
-                            valid var
-                            <li>"var = myName", it's called camel case variable declaration.</li>
-                            <li>"var = my123", declare number after character and its valid variable declaration.</li>
-                            <li>"var = om_kar", expect valid sybol is "$ & _"</li>
+                            <b>valid var</b>
+                            <li>"var  myName", it's called camel case variable declaration.</li>
+                            <li>"var  my123", declare number after character and its valid variable declaration.</li>
+                            <li>"var  om_kar", expect valid sybol is "$ & _"</li>
         
                         </div>
                         <div>
-                            unvalid var
+                            <b>unvalid var</b>
                             <li>"var = 123var", satrting with number</li>
                             <li>"var = omkar sature", spaincing between two words</li>
                             <li>"var = om-kar", not valid symbol</li>
@@ -110,7 +110,7 @@
             <div>
                 <ul>
                     <h3>Data Types</h3>
-                    <li>String : var myName = 'hello world' OR 'Omkar'</li>
+                    <li>String : var myName = 'hello world' OR "Omkar"</li>
                     <li>Numbers : var a = 1 OR 5 OR 0</li>
                     <li>Boolean : True / False</li>
                 </ul>
@@ -168,11 +168,18 @@
             <div>
                 <ul>
                     <h3>Increment & decrement</h3>
-                    <li>Example : Increment<br>
+                    <li>Example 1: Increment<br>
                         var a = 1;<br>
                         a++;<br>
                         alert(a)<br>
-                        Output : 2
+                        Output : 2<br>
+
+                        Example 2: Increment<br>
+                        var a = 5;<br>
+                        a+= 2;<br>
+                        alert(a)<br>
+                        Output : 7<br>
+
                     </li>
                     <li>Example : Decrement<br>
                         var b = 3;<br>
@@ -511,11 +518,15 @@
                         <ul>
                             <li>click(); : document.querySelector("input").click();</li>
                             <li>appendChild(); :</li>
+                            <li>.includes()</li>
+                            <li>.lenght()</li>
+                            <li>Math.round()/Math.floor()</li>
                             <li>getAttribute();/setAttribute(); :<br>
                                 document.querySelector("a").getAttribute("href");<br>
                                 document.querySelector("a").setAttribute("href","https://www.facebook.com");</li>
                             <li>add();/remove();/toggle(); : document.querySelector("button")classList.add("btn-2");</li>
                             <li>QuerySelector() :document.querySelecotr("#list a")</li>
+                            
                         </ul>
                     </li>
                 </div>
@@ -535,6 +546,112 @@
                     </li>
                 </div>
                 
+            </div>
+            <div>Code of Dice game </div>
+            <div class="js">
+                <div>
+                    <h3>HTML code</h3>
+                    <p>
+                        < body><br>
+
+                            < div class="container"><br>
+                                < h1>Refresh Me< /h1><br>
+
+                                < div class="dice"><br>
+                                    < p>Player 1< /p><br>
+                                    < img class="imgs" src="images/dice6.png"><br>
+                                < /div><br>
+
+                                < div class="dice"><br>
+                                < p>Player 2< /p><br>
+                                < img class="imgs" src="images/dice6.png"><br>
+                                < /div><br>
+
+                            < /div><br>
+
+
+                            < script type="text/javascript" src="dice.js"></script><br>
+                        < /body>
+                    </p>
+                </div>
+                <div>
+                    <h3>JS code & DOM</h3>
+                    <p>
+                        
+                        var randomNumber1 = Math.floor(Math.random() * 6) + 1;<br>
+
+                        var randomDiceImage = "dice" + randomNumber1 + ".png";<br>
+
+                        var image1 = document.querySelectorAll("img")[0];<br>
+
+                        image1.setAttribute("src", randomDiceImage);<br>
+
+
+                        var randomNumber2 = Math.floor(Math.random() * 6) + 1;<br>
+
+                        var randomImageSource2 = "dice" + randomNumber2 + ".png";<br>
+
+                        document.querySelectorAll("img")[1].setAttribute("src", randomImageSource2);<br>
+
+
+
+                        if (randomNumber1 > randomNumber2){<br>
+                            document.querySelector("h1").innerHTML =  "&#128525 Player1 Win!";<br>
+                        }else if(randomNumber1 === randomNumber2){<br>
+                            document.querySelector("h1").innerHTML =  "&#128517 it's Draw!"<br>
+                        }<br>
+                        else{<br>
+                            document.querySelector("h1").innerHTML =  "PLayer2 Win! &#128525 "<br>
+                        }<br>
+                    </p>
+                </div>
+                <div>
+                    <h3>CSS code</h3>
+                    <p>
+                        .container {
+                            width: 70%;
+                            margin: auto;
+                            text-align: center;
+                          }<br>
+                          
+                          .dice {
+                            text-align: center;
+                            display: inline-block;
+                          
+                          }<br>
+                          
+                          body {
+                            background-color: #393E46;
+                          }<br>
+                          
+                          h1 {
+                            margin: 30px;
+                            font-family: 'Lobster', cursive;
+                            text-shadow: 5px 0 #232931;
+                            font-size: 4.5rem;
+                            color: #4ECCA3;
+                          }<br>
+                          
+                          p {
+                            font-size: 2rem;
+                            color: #4ECCA3;
+                            font-family: 'Indie Flower', cursive;
+                          }<br>
+                          
+                          .imgs {
+                            width: 80%;
+                          }<br>
+                          
+                          footer {
+                            margin-top: 5%;
+                            color: #EEEEEE;
+                            text-align: center;
+                            font-family: 'Indie Flower', cursive;
+                          
+                          }<br>
+                          
+                    </p>
+                </div>
             </div>
         </div>
     </div>
